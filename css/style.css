@@ -1016,4 +1016,46 @@ input[type=number] { -moz-appearance:textfield; }
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  /* whatsap*/
+  /*
+#whatsapp {
   
+  position:fixed;
+  right:2px;
+  margin-top: -150px;
+  margin-right: 500px;
+
+  
+}
+
+  
+  @media (max-width: 768px) {
+    #whatsapp {
+      position: absolute;
+      margin-right:-900px;
+
+  
+    }
+    }
+  /*  svg {
+      width: 80px;
+      filter: drop-shadow(0 1px 4px rgb(0, 0, 0));
+      margin-left:-20px;
+    }
+    *//*
+    circle {
+      fill: #5c5b5b3a;
+     
+      
+    }
+    path {
+      fill: #fff;
+    }
+    circle {
+      fill: #000000;
+      width: 50px;
+    }
+    path {
+      fill: #fff;
+    }
+      whatsap*/
