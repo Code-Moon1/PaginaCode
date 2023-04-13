@@ -14,11 +14,14 @@ formulario.addEventListener('submit', function(event) {
   }
   if (usuarioEncontrado) {
     Swal.fire({
-      title: "¡Bienvenidxs!",
+      title: "¡Bienvenidos!",
       icon: "success",
       confirmButtonClass: "custom-confirm-button-class",
       confirmButtonColor: "#e23d82",
-        imageUrl: '',
+      imageUrl: '/img/14.png',
+      imageWidth: 200,
+      imageHeight: 200,
+      imageAlt: 'Custom image',
     });
 
 

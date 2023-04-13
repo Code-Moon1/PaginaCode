@@ -1,11 +1,11 @@
 .container-sm{
     /*  position: absolute;  */
      width: 600px;
-     height: 550px; 
+     height: 500px; 
      left: 890px;
      top: 248px; 
      justify-content: center;
-     background: rgba(255, 255, 255, 0.8);
+     background: rgba(255, 255, 255, 0);
      border: 1px solid rgba(0, 0, 0, 0.5);
      padding: 30px;
      margin-top: 70px;  
@@ -44,6 +44,12 @@
  .btn{
      background-color:#000000;
      color: aliceblue;
+     margin-left: 150px;
+     border: 1px solid rgba(0, 0, 0, 0.5);
+ }
+ #Titulo{
+    color: aliceblue;
+    margin-left: 150px;
  }
  
  #imagenPrevisualizacion{
