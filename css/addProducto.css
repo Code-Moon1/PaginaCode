@@ -28,16 +28,7 @@
             }
 
 
-            @media (max-width:600px) and (min-width:1600px) {
-                body {
-                    background-image:  url("/fotos/Fondos/peakpx.jpg") ;
-                }
-            }
-            @media (max-width:600px) and (min-width:200px) {
-                body {
-                    background-image:  url("/fotos/Fondos/peakpx.jpg") ;
-                }
-            }
+           
  .contAlert{
      padding: 30px;
  }

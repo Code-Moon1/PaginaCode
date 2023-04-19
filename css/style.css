@@ -25,7 +25,7 @@ body {
   h4,
   h5,
   h6 {
-    font-family: "black ops one", sans-serif;
+    font-family: "black ops one", 'Times New Roman';
   }
   .facebook{
     background-color: #000000;
@@ -231,10 +231,10 @@ body {
   #hero {
     width: 100%;
     height: 100vh;
-    
-    background: url("/img/gre1.gif") top center;
-   
+    background: url("/img/gres.gif") top center;
     background-size: cover;
+   
+    
   }
   
   #hero:before {
@@ -370,7 +370,11 @@ body {
   .about .content p:last-child {
     margin-bottom: 0;
   }
-  
+  /*#diseñow*/
+  .proy{
+    height: 200px;
+    width: 200px;
+  }
   /*--------------------------------------------------------------
   # Facts
   --------------------------------------------------------------*/
@@ -425,7 +429,88 @@ body {
   /*--------------------------------------------------------------
   # Akills
   --------------------------------------------------------------*/
-
+  .btn {
+    background: #000000;
+    color: white;
+    border: 0px;
+  
+  }
+  
+  /*boton de ver más color violeta*/ 
+  .swal2-confirm.custom-confirm-button-class {  
+    background-color: #0c0c0c;
+  }
+  
+  
+  @media (max-width: 1024px) {
+    .position-absolute {
+      width: 30%;
+      height: 1%;
+  
+    }
+  }
+  
+  .card-text {
+    text-align: justify;
+  }
+  
+  /*Alineacion del texto de las cards de productos*/
+  @-webkit-keyframes zoom {
+    from {
+      -webkit-transform: scale(1, 1);
+    }
+  
+    to {
+      -webkit-transform: scale(1.5, 1.5);
+    }
+  }
+  
+  @keyframes zoom {
+    from {
+      transform: scale(1, 1);
+    }
+  
+    to {
+      transform: scale(1.5, 1.5);
+    }
+  }
+  
+  /*Efecto de zoom de las cards y caruseles, fucniona al dar el primer click*/
+  
+  .carousel-item>img {
+    -webkit-animation: zoom 20s;
+    animation: zoom 20s;
+  }
+  
+  .precio {
+    margin-left: 70%;
+  
+  
+  }
+  
+  /*Alinea el testo de price con class precio a la izquierda*/
+  .card-text1 {
+    margin: auto;
+  
+  }
+  
+  /*Alineacion del texto de paquetes*/
+  .descripcion {
+    text-align: justify;
+    margin: 2em;
+  }
+  
+  .modal-title {
+    text-align: justify;
+  }
+  
+  /*Acomoda encabezado de paquetes*/
+  .diseño{
+    margin-top: 30px;
+  }
+  
+  /*margen general de la pagina y las cards
+    */
   /*--------------------------------------------------------------
   # Resume
   --------------------------------------------------------------*/
@@ -487,318 +572,27 @@ body {
     border: 2px solid #1f5297;
   }
   
+  
   /*--------------------------------------------------------------
-  # Portfolio
+  # audivisuales
   --------------------------------------------------------------*/
-  .portfolio .portfolio-item {
-    margin-bottom: 30px;
-  }
-  
-  .portfolio #portfolio-flters {
-    padding: 0;
-    margin: 0 auto 35px auto;
-    list-style: none;
-    text-align: center;
-    background: #fff;
-    border-radius: 50px;
-    padding: 2px 15px;
-  }
-  
-  .portfolio #portfolio-flters li {
-    cursor: pointer;
-    display: inline-block;
-    padding: 10px 15px 8px 15px;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1;
-    text-transform: uppercase;
-    color: #272829;
-    margin-bottom: 5px;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .portfolio #portfolio-flters li:hover,
-  .portfolio #portfolio-flters li.filter-active {
-    color: #149ddd;
-  }
-  
-  .portfolio #portfolio-flters li:last-child {
-    margin-right: 0;
-  }
-  
-  .portfolio .portfolio-wrap {
-    transition: 0.3s;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-  }
-  
-  .portfolio .portfolio-wrap::before {
-    content: "";
-    background: rgba(255, 255, 255, 0.5);
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    transition: all ease-in-out 0.3s;
-    z-index: 2;
-    opacity: 0;
-  }
-  
-  .portfolio .portfolio-wrap .portfolio-links {
-    opacity: 1;
-    left: 0;
-    right: 0;
-    bottom: -60px;
-    z-index: 3;
-    position: absolute;
-    transition: all ease-in-out 0.3s;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .portfolio .portfolio-wrap .portfolio-links a {
-    color: #fff;
-    font-size: 28px;
-    text-align: center;
-    background: rgba(20, 157, 221, 0.75);
-    transition: 0.3s;
-    width: 50%;
-  }
-  
-  .portfolio .portfolio-wrap .portfolio-links a:hover {
-    background: rgba(20, 157, 221, 0.95);
-  }
-  
-  .portfolio .portfolio-wrap .portfolio-links a+a {
-    border-left: 1px solid #37b3ed;
-  }
-  
-  .portfolio .portfolio-wrap:hover::before {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 1;
-  }
-  
-  .portfolio .portfolio-wrap:hover .portfolio-links {
-    opacity: 1;
-    bottom: 0;
+  #audiovisuales{
+    background: white;
   }
   
   /*--------------------------------------------------------------
   # Portfolio Details
   --------------------------------------------------------------*/
-  .portfolio-details {
-    padding-top: 40px;
-  }
-  
-  .portfolio-details .portfolio-details-slider img {
-    width: 100%;
-  }
-  
-  .portfolio-details .portfolio-details-slider .swiper-pagination {
-    margin-top: 20px;
-    position: relative;
-  }
-  
-  .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
-    width: 12px;
-    height: 12px;
-    background-color: #fff;
-    opacity: 1;
-    border: 1px solid #149ddd;
-  }
-  
-  .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-    background-color: #149ddd;
-  }
-  
-  .portfolio-details .portfolio-info {
-    padding: 30px;
-    box-shadow: 0px 0 30px rgba(5, 13, 24, 0.08);
-  }
-  
-  .portfolio-details .portfolio-info h3 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .portfolio-details .portfolio-info ul {
-    list-style: none;
-    padding: 0;
-    font-size: 15px;
-  }
-  
-  .portfolio-details .portfolio-info ul li+li {
-    margin-top: 10px;
-  }
-  
-  .portfolio-details .portfolio-description {
-    padding-top: 30px;
-  }
-  
-  .portfolio-details .portfolio-description h2 {
-    font-size: 26px;
-    font-weight: 700;
-    margin-bottom: 20px;
-  }
-  
-  .portfolio-details .portfolio-description p {
-    padding: 0;
-  }
-  
+ 
   /*--------------------------------------------------------------
   # Services
   --------------------------------------------------------------*/
-  .services .icon-box {
-    margin-bottom: 20px;
-  }
   
-  .services .icon {
-    float: left;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 54px;
-    height: 54px;
-    background: #149ddd;
-    border-radius: 50%;
-    transition: 0.5s;
-    border: 1px solid #149ddd;
-  }
-  
-  .services .icon i {
-    color: #fff;
-    font-size: 24px;
-    line-height: 0;
-  }
-  
-  .services .icon-box:hover .icon {
-    background: #fff;
-  }
-  
-  .services .icon-box:hover .icon i {
-    color: #149ddd;
-  }
-  
-  .services .title {
-    margin-left: 80px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    font-size: 18px;
-  }
-  
-  .services .title a {
-    color: #343a40;
-  }
-  
-  .services .title a:hover {
-    color: #149ddd;
-  }
-  
-  .services .description {
-    margin-left: 80px;
-    line-height: 24px;
-    font-size: 14px;
-  }
   
   /*--------------------------------------------------------------
   # Testimonials
   --------------------------------------------------------------*/
-  .testimonials .testimonials-carousel,
-  .testimonials .testimonials-slider {
-    overflow: hidden;
-  }
   
-  .testimonials .testimonial-item {
-    box-sizing: content-box;
-    text-align: center;
-    min-height: 320px;
-  }
-  
-  .testimonials .testimonial-item .testimonial-img {
-    width: 90px;
-    border-radius: 50%;
-    margin: 0 auto;
-  }
-  
-  .testimonials .testimonial-item h3 {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 10px 0 5px 0;
-    color: #111;
-  }
-  
-  .testimonials .testimonial-item h4 {
-    font-size: 14px;
-    color: #999;
-    margin: 0;
-  }
-  
-  .testimonials .testimonial-item .quote-icon-left,
-  .testimonials .testimonial-item .quote-icon-right {
-    color: #c3e8fa;
-    font-size: 26px;
-  }
-  
-  .testimonials .testimonial-item .quote-icon-left {
-    display: inline-block;
-    left: -5px;
-    position: relative;
-  }
-  
-  .testimonials .testimonial-item .quote-icon-right {
-    display: inline-block;
-    right: -5px;
-    position: relative;
-    top: 10px;
-  }
-  
-  .testimonials .testimonial-item p {
-    font-style: italic;
-    margin: 0 15px 15px 15px;
-    padding: 20px;
-    background: #fff;
-    position: relative;
-    margin-bottom: 35px;
-    border-radius: 6px;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .testimonials .testimonial-item p::after {
-    content: "";
-    width: 0;
-    height: 0;
-    border-top: 20px solid #fff;
-    border-right: 20px solid transparent;
-    border-left: 20px solid transparent;
-    position: absolute;
-    bottom: -20px;
-    left: calc(50% - 20px);
-  }
-  
-  .testimonials .swiper-pagination {
-    margin-top: 20px;
-    position: relative;
-  }
-  
-  .testimonials .swiper-pagination .swiper-pagination-bullet {
-    width: 12px;
-    height: 12px;
-    background-color: #fff;
-    opacity: 1;
-    border: 1px solid #149ddd;
-  }
-  
-  .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-    background-color: #149ddd;
-  }
   
   /*--------------------------------------------------------------
   # Contact
@@ -999,7 +793,7 @@ margin-left: 0px;
   @media (max-width:650px) and (min-width:200px) {
     .logor{
    position:center;
-   margin-left:70px;
+   margin-left:100px;
    width:  200px;
   height: 200px;
   margin-top:20px;

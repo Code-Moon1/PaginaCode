@@ -25,6 +25,7 @@
 
 
     <link href="/css/style.css" rel="stylesheet">
+    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
@@ -66,7 +67,7 @@
                 <div class="social-links mt-3 text-center">
                   <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
                   <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a> 
-                  <a href="https://api.whatsapp.com/send?phone=AGREGARNUMERO&text=Hola,%20Gracias%20por%20su%20interés%20¿En%20qué%20le%20puedo%20ayudar?"" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
+                  <a href="https://api.whatsapp.com/send?phone=AGREGARNUMERO&text=Hola,%20Gracias%20por%20su%20interés%20¿En%20qué%20le%20puedo%20ayudar?"class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
           
                 </div>
 
@@ -76,7 +77,7 @@
                 <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Inicio</span></a></li> <!-- me regresara al inicio de mi pagina-->
                 <li><a href="#quienes" class="nav-link scrollto"><i class="bx bx-bot"></i> <span>¿Quienes somos?</span></a></li> <!-- me regresara a la seccion "sobre mi"-->
                 <li><a href="#Diseño" class="nav-link scrollto"><i class="bx bx-laptop"></i> <span>Diseño Web y Digitales</span></a></li> <!--idem-->
-                <li><a href="#portafolio" class="nav-link scrollto"><i class="bx bx-planet"></i> <span> Audio Visuales</span></a></li> <!--idem-->
+                <li><a href="#audiovisuales" class="nav-link scrollto"><i class="bx bx-planet"></i> <span> Audio Visuales</span></a></li> <!--idem-->
                 <li><a href="#contacto" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contacto</span></a></li> <!--idem-->
                 <li><a href="#usuarios" class="nav-link scrollto"><i class="bx bx-smile"></i> <span>Usuarios</span></a></li> <!--idem-->
               </ul>
@@ -95,7 +96,7 @@
       
         <div class="hero-container" data-aos="fade-in">
           
-            <p>Crea <span class="typed" data-typed-items="Paginas Web, Proyectos Digitales, Solo la imaginacion es un limite"></span></p>
+            <p>Crea <span class="typed" data-typed-items="Paginas Web., Proyectos Digitales., Trabajos de Audio y Video."></span></p>
         </div>
     </section>
 <!-- fin de la leyenda -->
@@ -126,102 +127,59 @@
     </section><!-- fin sobre mi-->
 
     <!-- ======= Seccion de Skills ======= -->
-    <section id="skills" class="skills section-bg">
+    <section id="diseñow" class="diseñow section-bg">
       <div class="container">
 
         <div class="section-title">
           <h2>Diseño Web</h2>
         </div>
 <section>
-  <div id="carouselExampleDark" class="carousel carousel-dark slide">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="6" aria-label="Slide 2"></button>
+  
+  <h1>Datos del producto</h1>
+  <table>
+    <tr>
+      <td>Proyecto:</td>
+      <td id="InputNombre"></td>
+    </tr>
+    <tr>
+      <td>Precio:</td>
+      <td id="InputPrecio"></td>
+    </tr>
+    <tr>
+      <td>Descripción:</td>
+      <td id="InputResumen"></td>
+    </tr>
+    <tr>
+     
+      <td><img src="" id="InputUrlImg1" class="proy"></td>
+    </tr>
+    <tr>
+     
+      <td><img src="" id="InputUrlImg2" class="proy"></td>
+    </tr>
+    <tr>
+     
+      <td><img src="" id="InputUrlImg3" class="proy"></td>
+    </tr>
+  </table>
+  <script>
+    const name = sessionStorage.getItem('InputNombre');
+    const price = sessionStorage.getItem('InputPrecio');
+    const summary = sessionStorage.getItem('InputResumen');
+    const image1 = sessionStorage.getItem('InputUrlImg1');
+    const image2 = sessionStorage.getItem('InputUrlImg2');
+    const image3 = sessionStorage.getItem('InputUrlImg3');
 
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="10000">
-        <img src="/img/proyectos/Sin título.png" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
-        </div>
-      </div>
-      <div class="carousel-item" data-bs-interval="2000">
-        <img src="/img/proyectos/Sin título3.png" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
-        </div>
-      </div>
-      <div class="carousel-item" data-bs-interval="2000">
-        <img src="img/proyectos/Sin título4.png" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
-        </div>
-      </div>
-      <div class="carousel-item" data-bs-interval="2000">
-        <img src="/img/proyectos/aj.png" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
-        </div>
-      </div>
-      <div class="carousel-item" data-bs-interval="2000">
-        <img src="/img/proyectos/m.png" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
-        </div>
-      </div>
-      <div class="carousel-item" data-bs-interval="2000">
-        <img src="/img/proyectos/m1.png" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
-        </div>
-      </div>
-      <div class="carousel-item" data-bs-interval="2000">
-        <img src="/img/proyectos/m3.png" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
-        </div>
-      </div>
-      <div class="carousel-item" data-bs-interval="2000">
-        <img src="/img/proyectos/ma.png" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
-        </div>
-      </div>
+    document.getElementById('InputNombre').textContent = name;
+    document.getElementById('InputPrecio').textContent = price;
+    document.getElementById('InputResumen').textContent = summary;
+    document.getElementById('InputUrlImg1').src = image1;
+    document.getElementById('InputUrlImg2').src = image2;
+    document.getElementById('InputUrlImg3').src = image3;
+  </script>
+  </section><!-- fin de skills -->
 
-      
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</section>
-</div>
-
-</div>
-
-</div>
-    </section><!-- fin de skills -->
-
-    <!-- ======= CV =======-->
+    <!-- ======= Diseño =======-->
     <section id="Diseño" class="resume">
       <div class="container">
 
@@ -319,10 +277,10 @@
         </div>
 
       </div> 
-    </section><!--TERMINA CV -->
+    </section><!--diseño -->
 
-    <!-- ======= PORTAFOLIO (aqui van imagenes de lo que he hecho, osea de la pagina de ajolote)======= -->
-    <section id="portafolio" class="portfolio section-bg">
+    <!-- ======= (Audiovisuales )======= -->
+    <section id="audiovisuales" class="audiovisuales section-bg">
       <div class="container">
 
         <div class="section-title">
@@ -506,6 +464,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="/js/validate.js"></script>
   <script src="js/usuario.js"></script>
+  <script src="js/diseñoweb.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
@@ -515,4 +474,4 @@
 
 </body>
 
-</html>
+</html> 

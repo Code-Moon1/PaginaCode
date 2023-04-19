@@ -33,18 +33,12 @@
   </section>
   <div class="container flex-fill">
     <!-- Contenido de la página -->
-    <div>
-      <div class="contAlert">
-        <div class="alert alert-danger" id="alert-error" role="alert">
-        </div>
-        <div class="alert alert-success" id="alert-success" role="alert">
-        </div>
-      </div>
+   
     </div>
 
     <div class="container-sm" id="cont">
       <main class="form-signin w-100 m-auto">
-        <form class="form">
+        <form class="form"  id="product-form">
           <h1 id="Titulo" class="h2 mb-3 ">Añadir proyectos</h1>
           <div class="form-floatingNombre">
             <input type="text" class="form-control" id="InputNombre" placeholder="Nombre">
@@ -58,16 +52,20 @@
           </div>
           <div class="form-floatingResumen">
             <input name="resumen" type="text" id="InputResumen" class="form-control"
-              placeholder="CaracteristicasS"></input>
+              placeholder="Caracteristicas"></input>
             <label for="Input"></label>
           </div>
-          <div class="form-floatingDescAct">
-            <input name="descripcionAct" type="text" id="InputdescripcionAct" class="form-control"
-              placeholder="Descripción del trabajo"></input>
-            <label for="Input"></label>
+          
+          <div class="form-floatingUrlImagen">
+            <input type="text" class="form-control" id="InputUrlImg1" placeholder="Url Imagen1" accept="image/*" required>
+            <label for="Input"> </label>
           </div>
           <div class="form-floatingUrlImagen">
-            <input type="text" class="form-control" id="InputUrlImg" placeholder="Url Imagen">
+            <input type="text" class="form-control" id="InputUrlImg2" placeholder="Url Imagen2" accept="image/*" required>
+            <label for="Input"> </label>
+          </div>
+          <div class="form-floatingUrlImagen">
+            <input type="text" class="form-control" id="InputUrlImg3" placeholder="Url Imagen3" accept="image/*" required>
             <label for="Input"> </label>
           </div>
           <!-- <div class="form-floating"></div>
@@ -88,8 +86,6 @@
   </div>
 
 
-
-  <div id="pieDePag"></div>
 
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
