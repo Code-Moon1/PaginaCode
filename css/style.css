@@ -455,26 +455,30 @@ body {
   }
   
   /*Alineacion del texto de las cards de productos*/
-  @-webkit-keyframes zoom {
-    from {
-      -webkit-transform: scale(1, 1);
-    }
+ 
   
-    to {
-      -webkit-transform: scale(1.5, 1.5);
-    }
+  .carousel-item{
+    width: 290px;
+ margin-top: 90px;
+  }
+  .carousel-inner{
+    width: 300px;
   }
   
-  @keyframes zoom {
-    from {
-      transform: scale(1, 1);
-    }
-  
-    to {
-      transform: scale(1.5, 1.5);
-    }
+  #carouselExampleIndicators{
+    width: 290px;
+    height: 300px;
+    margin-top: -20px;
   }
+ .carousel-indicators{
+  margin-bottom: 40px;
+ }
+ .card-body{
   
+  border: none;
+  background-color: #00000000;
+ }
+
   /*Efecto de zoom de las cards y caruseles, fucniona al dar el primer click*/
   
   .carousel-item>img {

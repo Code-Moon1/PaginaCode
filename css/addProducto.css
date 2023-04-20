@@ -1,15 +1,16 @@
 .container-sm{
     /*  position: absolute;  */
      width: 600px;
-     height: 500px; 
+     height: 600px; 
      left: 890px;
      top: 248px; 
      justify-content: center;
-     background: rgba(255, 255, 255, 0);
-     border: 1px solid rgba(0, 0, 0, 0.5);
+     background: linear-gradient(135deg,rgba(225, 225, 255, 01), rgba (255, 255 255,0));
+     border: 1px solid rgba(255, 255, 255, 0.18);
      padding: 30px;
      margin-top: 70px;  
-    
+     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
  }
  @media (max-width:600px) and (min-width:1600px) {
  .container-sm{

@@ -17,5 +17,8 @@ form.addEventListener('submit', (event) => {
   sessionStorage.setItem('InputUrlImg2', image2);
   sessionStorage.setItem('InputUrlImg3', image3);
 
-  window.location.href = 'index.html';
+  alert('El formulario se ha llenado correctamente.');
+
+  form.reset(); 
+  // Opcional: resetear el formulario
 });
