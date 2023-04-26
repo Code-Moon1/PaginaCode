@@ -127,83 +127,36 @@
     </section><!-- fin sobre mi-->
 
     <!-- ======= Seccion de Skills ======= -->
+  
+   
     <section id="diseñow" class="diseñow section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Diseño Web</h2>
-        </div>
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="" class="d-block w-100" alt="Project Image" id="InputUrlImg1">
-            </div>
-            <div class="carousel-item">
-              <img src="" class="d-block w-100" alt="Project Image" id="InputUrlImg2">
-            </div>
-            <div class="carousel-item">
-              <img src="" class="d-block w-100" alt="Project Image" id="InputUrlImg3">
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </a>
-        </div>
-        
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5>Proyecto</h5>
-            <p class="card-title" id="InputNombre"></p>
-            <strong> Caracteristicas</strong>
-            <p class="card-text" id="InputResumen"></p>
-            <strong>Precio</strong>
-            <p class="card-text" id="InputPrecio">Precio</p>
-            <button id="btnEnviar" class="w-200 btn btn-lg btn-secundari" type="submit" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-rocket-takeoff" viewBox="0 0 16 16">
-              <path d="M9.752 6.193c.599.6 1.73.437 2.528-.362.798-.799.96-1.932.362-2.531-.599-.6-1.73-.438-2.528.361-.798.8-.96 1.933-.362 2.532Z"/>
-              <path d="M15.811 3.312c-.363 1.534-1.334 3.626-3.64 6.218l-.24 2.408a2.56 2.56 0 0 1-.732 1.526L8.817 15.85a.51.51 0 0 1-.867-.434l.27-1.899c.04-.28-.013-.593-.131-.956a9.42 9.42 0 0 0-.249-.657l-.082-.202c-.815-.197-1.578-.662-2.191-1.277-.614-.615-1.079-1.379-1.275-2.195l-.203-.083a9.556 9.556 0 0 0-.655-.248c-.363-.119-.675-.172-.955-.132l-1.896.27A.51.51 0 0 1 .15 7.17l2.382-2.386c.41-.41.947-.67 1.524-.734h.006l2.4-.238C9.005 1.55 11.087.582 12.623.208c.89-.217 1.59-.232 2.08-.188.244.023.435.06.57.093.067.017.12.033.16.045.184.06.279.13.351.295l.029.073a3.475 3.475 0 0 1 .157.721c.055.485.051 1.178-.159 2.065Zm-4.828 7.475.04-.04-.107 1.081a1.536 1.536 0 0 1-.44.913l-1.298 1.3.054-.38c.072-.506-.034-.993-.172-1.418a8.548 8.548 0 0 0-.164-.45c.738-.065 1.462-.38 2.087-1.006ZM5.205 5c-.625.626-.94 1.351-1.004 2.09a8.497 8.497 0 0 0-.45-.164c-.424-.138-.91-.244-1.416-.172l-.38.054 1.3-1.3c.245-.246.566-.401.91-.44l1.08-.107-.04.039Zm9.406-3.961c-.38-.034-.967-.027-1.746.163-1.558.38-3.917 1.496-6.937 4.521-.62.62-.799 1.34-.687 2.051.107.676.483 1.362 1.048 1.928.564.565 1.25.941 1.924 1.049.71.112 1.429-.067 2.048-.688 3.079-3.083 4.192-5.444 4.556-6.987.183-.771.18-1.345.138-1.713a2.835 2.835 0 0 0-.045-.283 3.078 3.078 0 0 0-.3-.041Z"/>
-              <path d="M7.009 12.139a7.632 7.632 0 0 1-1.804-1.352A7.568 7.568 0 0 1 3.794 8.86c-1.102.992-1.965 5.054-1.839 5.18.125.126 3.936-.896 5.054-1.902Z"/>
-            </svg><span style="margin-left: 10px;">Lanzar</span>
-              
-             </button>
-          </div>
-          <script>
-            const name = sessionStorage.getItem('InputNombre');
-            const price = sessionStorage.getItem('InputPrecio');
-            const summary = sessionStorage.getItem('InputResumen');
-            const image1 = sessionStorage.getItem('InputUrlImg1');
-            const image2 = sessionStorage.getItem('InputUrlImg2');
-            const image3 = sessionStorage.getItem('InputUrlImg3');
-          
-            document.getElementById('InputNombre').textContent = name;
-            document.getElementById('InputPrecio').textContent = price;
-            document.getElementById('InputResumen').textContent = summary;
-            document.getElementById('InputUrlImg1').src = image1;
-            document.getElementById('InputUrlImg2').src = image2;
-            document.getElementById('InputUrlImg3').src = image3;
-          
-            // Inicializar el carrusel
-            const carousel = new bootstrap.Carousel(document.getElementById('carouselExampleIndicators'));
-          </script>
-        </div><!--
-    <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-     fin de skills -->
+      <div class="section-title">
+        <h2>Productos</h2>
+      </div>
+      <div id="imagenes"></div>
+      <script>
+        const producto = JSON.parse(localStorage.getItem("producto"));
+        const titulo = document.createElement("h1");
+        titulo.textContent = producto.nombre;
+        document.querySelector("#diseñow").appendChild(titulo);
+        const precio = document.createElement("p");
+        precio.textContent = `Precio: ${producto.precio}`;
+        document.querySelector("#diseñow").appendChild(precio);
+        const resumen = document.createElement("p");
+        resumen.textContent = producto.resumen;
+        document.querySelector("#diseñow").appendChild(resumen);
+        const imagenes = document.getElementById("imagenes");
+        for (const imagen of producto.imagenes) {
+          const img = document.createElement("img");
+          img.src = imagen;
+          img.style.width = "300px";
+          img.style.height = "200px";
+          img.style.marginRight = "10px";
+          imagenes.appendChild(img);
+        }
+      </script>
+    </section>
+    
 
     <!-- ======= Diseño =======-->
     <section id="Diseño" class="resume">
@@ -236,35 +189,7 @@
               <p> Mandanos tu idea o boceto y te creamos tu logo, marca personal, lo mejor para tu empresa o negocio para el mundo digital.</p>
             </div>
 
-            <div class="cardlog" style="max-width: 540px;">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="/img/logo.png" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <br>
-            <div class="cardlog" style="max-width: 540px;">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="/img/alert.png" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                  </div>
-                </div>
-              </div>
-            </div>
+           
 
 
           </div>
@@ -490,7 +415,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="/js/validate.js"></script>
   <script src="js/usuario.js"></script>
-  <script src="js/diseñoweb.js"></script>
+  
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>

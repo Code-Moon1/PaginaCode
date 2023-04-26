@@ -28,62 +28,105 @@
 </div></header>
 <a href="/index.html"><button type="button" class="btn btn-secondari btn-sm">sitio</button> </a>
 <body class="d-flex flex-column">
-  <section>
-    <div id="menu"></div> <!-- Esté es el menú de navegacion navBar -->
-  </section>
+ 
   <div class="container flex-fill">
     <!-- Contenido de la página -->
    
+      <div class="container-sm" id="cont">
+        <main class="form-signin w-100 m-auto">
+            <form class="form"  id="product-form">
+              <h1 id="Titulo" class="h2 mb-3 ">Añadir proyectos</h1>
+
+
+        <div class="form-floatingNombre">             
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
+             <label for="Input"> </label>
+           </div>   
+        <!--terminanombre-->
+        <div class="input-group mb-3">       
+            <span class="input-group-text">$</span>
+            <input type="number" class="form-control" id="precio" placeholder="Precio del paquete" step="any"
+              aria-label="Amount (to the nearest dollar)" name="precio" min="0" step="0.01" required>
+            <label for="Input"> </label>
+          </div> 
+        <!--terminaprecio-->
+        <div class="form-floatingResumen"><!--3-->
+            <input name="resumen" type="text" id="resumen" class="form-control"
+              placeholder="Caracteristicas" required></input>
+            <label for="Input"></label>
+        </div>
+
+          <input type="file" id="imagen1" name="imagen1" placeholder="Primera Imagen" required onchange="actualizarImagen('imagen1', 'imagen1-preview')">
+          <img id="imagen1-preview">
+<br>
+<br>       
+          <input type="url" id="imagen2" name="imagen2" placeholder="Segunda Imagen"required onchange="actualizarImagen('imagen2', 'imagen2-preview')">
+          <img id="imagen2-preview">
+          <br>
+          <br> 
+        
+          <input type="url" id="imagen3" name="imagen3" placeholder="Tercera Imagen" required onchange="actualizarImagen('imagen3', 'imagen3-preview')">
+          <img id="imagen3-preview">
+<br>
+<br>
+<button id="btnEnviar" class="w-200 btn btn-lg btn-primar " type="submit" value="Enviar">Agregar producto</button>
+      
+            </form>
+          </div>
+        </main>
+    
+      <script>
+        const formulario = document.getElementById("product-form");
+
+        function actualizarImagen(inputId, previewId) {
+          const input = document.getElementById(inputId);
+          const preview = document.getElementById(previewId);
+          const url = input.value;
+
+          // Si el usuario ingresó una URL válida
+          if (url.match(/\.(jpeg|jpg|gif|png)$/) != null) {
+            preview.setAttribute("src", url);
+          }
+        }
+
+        formulario.addEventListener("submit", function(event) {
+          event.preventDefault();
+
+          const producto = {
+            nombre: formulario.nombre.value,
+            precio: formulario.precio.value,
+            resumen: formulario.resumen.value,
+            imagenes: [
+              formulario.imagen1.value,
+              formulario.imagen2.value,
+              formulario.imagen3.value,
+            ],
+          };
+
+          localStorage.setItem("producto", JSON.stringify(producto));
+
+          
+
+
+        Swal.fire({
+          title: '¡Producto agregado!',
+          icon: 'success',
+          confirmButtonText: "Aceptar",
+          imageUrl: '/img/14.png',
+          imageWidth: 200,
+          imageHeight: 200,
+          imageAlt: 'Custom image',
+        }).then(function() {
+          // Opcional: resetear el formulario
+          formulario.reset();
+          // Redirigir a otra página
+          //window.location.href = "otra-pagina.html";
+        });
+      });
+    </script>
     </div>
 
-    <div class="container-sm" id="cont">
-      <main class="form-signin w-100 m-auto">
-        <form class="form"  id="product-form">
-          <h1 id="Titulo" class="h2 mb-3 ">Añadir proyectos</h1>
-          <div class="form-floatingNombre">
-            <input type="text" class="form-control" id="InputNombre" placeholder="Nombre">
-            <label for="Input"> </label>
-          </div>
-          <div class="input-group mb-3">
-            <span class="input-group-text">$</span>
-            <input type="number" class="form-control" id="InputPrecio" placeholder="Precio del paquete" step="any"
-              aria-label="Amount (to the nearest dollar)">
-            <label for="Input"> </label>
-          </div>
-          <div class="form-floatingResumen">
-            <input name="resumen" type="text" id="InputResumen" class="form-control"
-              placeholder="Caracteristicas"></input>
-            <label for="Input"></label>
-          </div>
-          
-          <div class="form-floatingUrlImagen">
-            <input type="text" class="form-control" id="InputUrlImg1" placeholder="Url Imagen1" accept="image/*" required>
-            <label for="Input"> </label>
-          </div>
-          <div class="form-floatingUrlImagen">
-            <input type="text" class="form-control" id="InputUrlImg2" placeholder="Url Imagen2" accept="image/*" required>
-            <label for="Input"> </label>
-          </div>
-          <div class="form-floatingUrlImagen">
-            <input type="text" class="form-control" id="InputUrlImg3" placeholder="Url Imagen3" accept="image/*" required>
-            <label for="Input"> </label>
-          </div>
-          <!-- <div class="form-floating"></div>
-          <div class="input-group">
-            <input type="file" class="form-control" id="seleccionArchivos" aria-describedby="inputGroupImgAddon04"
-              aria-label="Upload" multiple>
-            <button class="btn btn-outline-secondary" type="button">Subir</button>
-          </div> -->
-          <br>
-          <button id="btnEnviar" class="w-200 btn btn-lg btn-primar " type="submit">Agregar producto</button>
-    </div>
-  </div>
-  </form>
-  </main>
-  <div class="contimg"><br /> <img id="imagenPrevisualizacion" height="100px" width="auto"></div>
-  </div>
-  </div>
-  </div>
+        
 
 
 
@@ -92,7 +135,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
-  <script src="/js/addProducto.js"></script>
+  
 
 </body>
 </html>

@@ -29,7 +29,18 @@
             }
 
 
-           
+            #imagen1-preview{
+                width: 20%;
+                height: 20%;
+            }
+            #imagen2-preview{
+                width: 20%;
+                height: 20%;
+            }
+            #imagen3-preview{
+                width: 20%;
+                height: 20%;
+            }         
  .contAlert{
      padding: 30px;
  }

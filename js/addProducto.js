@@ -16,9 +16,39 @@ form.addEventListener('submit', (event) => {
   sessionStorage.setItem('InputUrlImg1', image1);
   sessionStorage.setItem('InputUrlImg2', image2);
   sessionStorage.setItem('InputUrlImg3', image3);
+  const imageInput = document.getElementById('image');
+const previewImg = document.getElementById('preview');
 
-  alert('El formulario se ha llenado correctamente.');
+imageInput.addEventListener('change', function() {
+  const file = this.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.addEventListener('load', function() {
+      previewImg.setAttribute('src', reader.result);
+    });
+    reader.readAsDataURL(file);
+  }
+});
+
+
+  Swal.fire({
+    title: '¡Producto agregado!',
+    titleColor:'#000000',
+    icon: 'success',
+    confirmButtonText: "Aceptar",
+    confirmButtonColor: '#000000',
+    confirmButtonsize: '20px',
+    confirmButtonClass: 'custom-confirm-button-class' ,
+    imageUrl: '/img/14.png',
+    imageWidth: 200,
+    imageHeight: 200,
+    imageAlt: 'Custom image',
+  })  
 
   form.reset(); 
   // Opcional: resetear el formulario
 });
+//then((message /* alert(message) */) =>
+  
+      
+    
