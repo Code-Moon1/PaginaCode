@@ -127,35 +127,63 @@
     </section><!-- fin sobre mi-->
 
     <!-- ======= Seccion de Skills ======= -->
-  
-   
     <section id="diseñow" class="diseñow section-bg">
-      <div class="section-title">
-        <h2>Productos</h2>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title" id="titulo-producto"></h5>
+          <p class="card-text" id="resumen-producto"></p>
+          <p class="card-text" id="precio-producto"></p>
+          <div id="carousel-imagenes" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-imagenes" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel-imagenes" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
       </div>
-      <div id="imagenes"></div>
+    
       <script>
         const producto = JSON.parse(localStorage.getItem("producto"));
-        const titulo = document.createElement("h1");
-        titulo.textContent = producto.nombre;
-        document.querySelector("#diseñow").appendChild(titulo);
-        const precio = document.createElement("p");
-        precio.textContent = `Precio: ${producto.precio}`;
-        document.querySelector("#diseñow").appendChild(precio);
-        const resumen = document.createElement("p");
-        resumen.textContent = producto.resumen;
-        document.querySelector("#diseñow").appendChild(resumen);
-        const imagenes = document.getElementById("imagenes");
+        document.querySelector("#titulo-producto").textContent = producto.nombre;
+        document.querySelector("#resumen-producto").textContent = producto.resumen;
+        document.querySelector("#precio-producto").textContent = `Precio: ${producto.precio}`;
+        const carouselImagenes = document.querySelector("#carousel-imagenes .carousel-inner");
+        let primeraImagen = true;
         for (const imagen of producto.imagenes) {
+          const item = document.createElement("div");
+          item.classList.add("carousel-item");
+          if (primeraImagen) {
+            item.classList.add("active");
+            primeraImagen = false;
+          }
           const img = document.createElement("img");
           img.src = imagen;
-          img.style.width = "300px";
-          img.style.height = "200px";
-          img.style.marginRight = "10px";
-          imagenes.appendChild(img);
+          img.style.width = "250px";
+          img.style.height = "100%";
+          item.appendChild(img);
+          carouselImagenes.appendChild(item);
         }
       </script>
     </section>
+    
+    
+    
+    
+    
+    <!--<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>-->
     
 
     <!-- ======= Diseño =======-->
@@ -188,7 +216,12 @@
               
               <p> Mandanos tu idea o boceto y te creamos tu logo, marca personal, lo mejor para tu empresa o negocio para el mundo digital.</p>
             </div>
-
+            <h3 class="resume-title">reparacion y actualizacion de equipos de computo</h3>
+            
+            <div class="resume-item">
+              
+              <p> Servicio de reparación, actualizacion y mantenimiento de equipos de computo.</p>
+            </div>
            
 
 
@@ -236,8 +269,8 @@
 
         <div class="section-title">
           <h2>Audiovisual</h2>
-          <p>Cmabiar id a Audiovisual</p>
-          <p>Colocar videos de audio y grabacion de <video src="/img/audio.mp4"></video></p>
+          <p>Aca pondremos el video de la luna</p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/L0o2mgHAPXI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
   
         
