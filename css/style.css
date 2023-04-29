@@ -371,10 +371,7 @@ body {
     margin-bottom: 0;
   }
   /*#diseñow*/
-  .proy{
-    height: 200px;
-    width: 200px;
-  }
+ 
   #diseñow{
     background-color: white;
   }
@@ -458,26 +455,98 @@ body {
   /*Alineacion del texto de las cards de productos*/
  .card{
   margin-left: 20px;
+
  }
+ #objeto{
+  margin-left: 350px;
+  width:300px;
+  height:400px ;
+ }
+ @media screen and (max-width: 650px) {
+  #tarjeta {
+    display: flex;
+    flex-direction: column;
+  }
+}
  .card-body{
-  width: 1000px;
+  width: 300px;
+  height: 400px;
  
  }
+#adelante{
+  margin-right: -10px;
+  
+  filter: invert(100%);
+}
+#atras{
+  margin-left: -10px;
+  filter: invert(100%);
+}
+#viaje{
+  margin-left: 50px;
+  margin-top: 30px;
+}
+#tarjeta{
+  height: 400px;
+  margin-top: -400px;
+  width: 300px;
+}
+#go{
+  margin-right: 210px;
+  filter: invert(100%);
+  margin-top: -70px;
+}
+#come{
+  margin-left: -30px;
+  margin-top: -70px;
+}
+ .card-text{
+  width: 300px;
+ }
+ .contenido-extra {
+  display: none;
+}
+.card-expanded {
+  height: auto;
+}
+ .d-block{
+  width: 240px;
+  transition: transform 0.3s ease-in-out;
+
+height: 140px;
+ }
+ #resumen-producto{
+  width: 250px;
+ }
 .carousel-item{
-  width: 100px;
+  width: 240px;
 }
-.carousel-control-next{
-  margin-right: 250px;
-}
+
 .carousel-inner{
   width: 250px;
+  height: 150;
+}
+.carousel-indicators{
+  width: 250px;
+}
+.myCarousel{
+  width: 300px;
 }
 img{
-  margin-right: 100px;
+  margin-right: 120px;
 }
   #carousel-imagenes{
     width: 500px;
+
   }
+  .carousel-item {
+    transition: transform 0.5s ease-in-out;
+  }
+  #ir{
+    margin-left:-250px;
+    margin-top: 20px;
+  }
+  
   /*margen general de la pagina y las cards
     */
   /*--------------------------------------------------------------
