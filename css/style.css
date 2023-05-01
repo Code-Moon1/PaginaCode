@@ -455,12 +455,20 @@ body {
   /*Alineacion del texto de las cards de productos*/
  .card{
   margin-left: 20px;
+  border: #00000000;
+  
 
  }
+
+ .card-title{
+  text-align:center ;
+  margin-top: 10px;
+ }
+
  #objeto{
   margin-left: 350px;
   width:300px;
-  height:400px ;
+  height:450px ;
  }
  @media screen and (max-width: 650px) {
   #tarjeta {
@@ -475,20 +483,22 @@ body {
  }
 #adelante{
   margin-right: -10px;
-  
+  margin-top: -70px; margin-top: -70px;
   filter: invert(100%);
 }
 #atras{
   margin-left: -10px;
   filter: invert(100%);
+  margin-top: -70px;
 }
 #viaje{
-  margin-left: 50px;
-  margin-top: 30px;
+  margin-left: 20px;
+  margin-top: 20px;
+  padding: .625rem 1.875rem;
 }
 #tarjeta{
-  height: 400px;
-  margin-top: -400px;
+  height: 550px;
+  margin-top: -450px;
   width: 300px;
 }
 #go{
@@ -499,10 +509,12 @@ body {
 #come{
   margin-left: -30px;
   margin-top: -70px;
+  filter: invert(100%);
 }
- .card-text{
-  width: 300px;
- }
+.card-text {
+  padding: 10px;
+}
+
  .contenido-extra {
   display: none;
 }
@@ -510,10 +522,11 @@ body {
   height: auto;
 }
  .d-block{
-  width: 240px;
+  width: 250px;
   transition: transform 0.3s ease-in-out;
+margin-left: 17px;
 
-height: 140px;
+height: 150px;
  }
  #resumen-producto{
   width: 250px;
@@ -547,6 +560,20 @@ img{
     margin-top: 20px;
   }
   
+  #ver-mas{
+    background-color: rgba(255, 255, 255, 0);
+    color: #000;
+    padding: 0.25rem .5rem;
+    font-family: "Times-roman", sans-serif;
+    margin-left: -20px;
+    margin-top: -25px;
+  }
+  #tarjeta .card-title{
+    margin-top: 27px;
+  }
+  #tarjeta .card-text{
+    margin-top: -20px;
+  }
   /*margen general de la pagina y las cards
     */
   /*--------------------------------------------------------------
@@ -690,9 +717,9 @@ input[type=number]::-webkit-outer-spin-button {
 input[type=number] { -moz-appearance:textfield; }
 
 
-.btn{
+#btnEnviar{
   background:#000000;
-  color:white;
+  color:rgb(240, 234, 234);
   border:0px;
   font-size: 15px;
   display: inline-block;

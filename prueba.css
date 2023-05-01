@@ -1,0 +1,59 @@
+.carousel-item {
+    height: 300px;
+  }
+  
+  .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-img-top {
+    height: 50%;
+    object-fit: cover;
+  }
+  
+  .card-title {
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+  
+  .card-text {
+    margin-bottom: 1rem;
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    height: 50px;
+    width: 50px;
+    outline: black;
+    background-size: 100%, 100%;
+    border-radius: 50%;
+    border: 1px solid black;
+  }
+  
+  .carousel-control-prev-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" %3E%3Cpath d="M15.41 17.41L14 16l-6-6 6-6 1.41 1.41L10.83 10H20v4h-9.17l4.58 4.58z" /%3E%3C/svg%3E');
+  }
+  
+  .carousel-control-next-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" %3E%3Cpath d="M8.59 6.59L10 8l6 6-6 6-1.41-1.41L13.17 14H4v-4h9.17l-4.58-4.58z" /%3E%3C/svg%3E');
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 5%;
+    height: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 1;
+  }
+  
+  .carousel-control-prev:hover,
+  .carousel-control-next:hover {
+    background-color: rgba(0,0,0,0.3);
+    outline: black;
+  }
+  

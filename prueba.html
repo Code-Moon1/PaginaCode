@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Carousel Example</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/css/bootstrap.min.css">
+  <style>
+    .carousel-item {
+      text-align: center;
+    }
+    .card {
+      display: inline-block;
+      width: 300px;
+    }
+    .card-img-top {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+    <section id="carousel-section" class="carousel-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>Lista de objetos</h2>
+              <div id="carousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" id="carousel-inner">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/js/bootstrap.min.js"></script>
+     <script>const producto = JSON.parse(localStorage.getItem("producto"));
+        document.querySelector("#titulo-producto").textContent = producto.nombre;
+        document.querySelector("#resumen-producto").textContent = producto.resumen;
+        document.querySelector("#precio-producto").textContent = `Precio: ${producto.precio}`;
+        const carouselImagenes = document.querySelector("#carousel-imagenes .carousel-inner");
+        let primeraImagen = true;
+        for (const imagen of producto.imagenes) {
+          const item = document.createElement("div");
+          item.classList.add("carousel-item");
+          if (primeraImagen) {
+            item.classList.add("active");
+            primeraImagen = false;
+          }
+          const img = document.createElement("img");
+          img.src = imagen;
+          img.style.width = "230px";
+          img.style.height = "150px";
+          img.style.marginLeft = "15px";
+    
+          item.appendChild(img);
+          carouselImagenes.appendChild(item);
+        }
+        const carousel = document.querySelector("#carousel-imagenes");
+        const myCarousel = new bootstrap.Carousel(carousel, {
+          interval: 5000
+        });</script>
+     
+     <script>
+
+
+  // La lista de objetos
+  let objetos = [
+    {
+      titulo: "Objeto 1",
+      resumen: "Descripción del objeto 1.",
+      precio: "$10.00",
+      imagenes: ["img/objeto1-1.jpg", "img/objeto1-2.jpg", "img/objeto1-3.jpg"]
+    },
+    {
+      titulo: "Objeto 2",
+      resumen: "Descripción del objeto 2.",
+      precio: "$20.00",
+      imagenes: ["img/objeto2-1.jpg", "img/objeto2-2.jpg"]
+    },
+    {
+      titulo: "Objeto 3",
+      resumen: "Descripción del objeto 3.",
+      precio: "$30.00",
+      imagenes: ["img/objeto3-1.jpg", "img/objeto3-2.jpg", "img/objeto3-3.jpg", "img/objeto3-4.jpg"]
+    }
+  ];
+
+  function mostrarObjetos() {
+    let carouselInner = $("#carousel-inner");
+    carouselInner.html("");
+    for (let i = 0; i < objetos.length; i++) {
+      let activeClass = (i == 0) ? "active" : "";
+      let objeto = objetos[i];
+      let imagenes = objeto.imagenes.map(imagen => `<div class="carousel-item ${activeClass}"><img src="${imagen}" class="d-block w-100"></div>`).join('');
+      let card = `
+        <div class="card">
+          <img src="${objeto.imagenes[0]}" class="card-img-top" alt="${objeto.titulo}">
+          <div class="card-body">
+            <h5 class="card-title">${objeto.titulo}</h5>
+            <p class="card-text">${objeto.resumen}</p>
+            <p class="card-text">${objeto.precio}</p>
+            <div id="carousel-imagenes-${i}" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">${imagenes}</div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carousel-imagenes-${i}" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carousel-imagenes-${i}" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>`;
+      carouselInner.append(card);
+      const myCarousel = new bootstrap.Carousel(document.querySelector(`#carousel-imagenes-${i}`), {
+        interval: 5000
+      });
+    }
+  }
+
+  mostrarObjetos();
+</script>
+s
+            
+</body>
+</html>
