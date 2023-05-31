@@ -1,14 +1,15 @@
 .container-sm{
     /*  position: absolute;  */
      width: 600px;
-     height: 600px; 
+     height: 700px; 
      left: 890px;
      top: 248px; 
      justify-content: center;
      background: linear-gradient(135deg,rgba(225, 225, 255, 01), rgba (255, 255 255,0));
      border: 1px solid rgba(255, 255, 255, 0.18);
      padding: 30px;
-     margin-top: 70px;  
+     margin-top: 10px;  
+     margin-bottom: 30px;
      backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
  }

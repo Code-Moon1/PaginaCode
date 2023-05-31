@@ -1,0 +1,23 @@
+{
+  "name": "paginacode",
+  "version": "1.0.0",
+  "description": "Pagina profesional",
+  "main": "bootstrap.bundle.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Code-Moon1/PaginaCode.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Code-Moon1/PaginaCode/issues"
+  },
+  "homepage": "https://github.com/Code-Moon1/PaginaCode#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  }
+}

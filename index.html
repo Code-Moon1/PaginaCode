@@ -127,8 +127,37 @@
     </section><!-- fin sobre mi-->
 
     <!-- ======= Seccion de Skills ======= -->
-    <section id="diseñow" class="diseñow section-bg" >
-      <div class="card"  id="objeto">
+    <section id="diseñow" class="diseñow " >
+      
+      <div id="card-container">
+        <div class="card" id="contenedor"></div>
+        <br>
+          <div class="card" id="CardItems"></div>
+          <div class="card">...</div>
+          <div class="card">...</div>
+     
+          <button id="show-more-button">Ver más</button>
+        </div>
+        
+<script>
+    const cards = document.querySelectorAll('#card-container .card');
+for (let i = 3; i < cards.length; i++) {
+  cards[i].classList.add('hidden');
+}
+const showMoreButton = document.getElementById('show-more-button');
+showMoreButton.addEventListener('click', () => {
+  const hiddenCards = document.querySelectorAll('#card-container .card.hidden');
+  for (let i = 0; i < 3 && i < hiddenCards.length; i++) {
+    hiddenCards[i].classList.remove('hidden');
+  }
+});
+
+</script>
+<!--script-->
+<script>
+    const contenedor = document.getElementById("contenedor");
+    contenedor.insertAdjacentHTML("beforeend", `
+      <div class="card" id="objeto">
         <div class="card-body">
           <h5 class="card-title" id="titulo-producto"></h5>
           <p class="card-text" id="resumen-producto"></p>
@@ -136,139 +165,100 @@
           <div id="carousel-imagenes" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
             </div>
-    
             <div class="text-center">
               <a href="" class="btn btn-dark" id="ir" target="_blank"><span style="margin-left: 10px;">Iniciar Viaje</span></a>
             </div>
-            <a class="carousel-control-prev" type="button" id="come" data-bs-target="#carousel-imagenes" data-bs-slide="prev">
+            <a class="carousel-control-prev" type="button" data-bs-target="#carousel-imagenes" data-bs-slide="prev" >
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="sr-only">Previous</span>
             </a>
-            
-            <a class="carousel-control-next" id="go" role="button" data-bs-target="#carousel-imagenes" data-bs-slide="next">
+            <a class="carousel-control-next" role="button" data-bs-target="#carousel-imagenes" data-bs-slide="next" >
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="sr-only">Next</span>
             </a>
-
           </div>
         </div>
       </div>
-    
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-      <script>
-        
-        const producto = JSON.parse(localStorage.getItem("producto"));
-        document.querySelector("#titulo-producto").textContent = producto.nombre;
-        document.querySelector("#resumen-producto").textContent = producto.resumen;
-        document.querySelector("#precio-producto").textContent = `Precio: ${producto.precio}$`;
-        const carouselImagenes = document.querySelector("#carousel-imagenes .carousel-inner");
-        let primeraImagen = true;
-        for (const imagen of producto.imagenes) {
-          const item = document.createElement("div");
-          item.classList.add("carousel-item");
-          if (primeraImagen) {
-            item.classList.add("active");
-            primeraImagen = false;
-          }
-          const img = document.createElement("img");
-          img.src = imagen;
-          img.style.width = "250px";
-          img.style.height = "150px";
-          img.style.marginLeft = "15px";
-    
-          item.appendChild(img);
-          carouselImagenes.appendChild(item);
-        }
-       ;
-        
-      </script>
-      <div class="card" id="tarjeta">
-        <div id="CardItems"></div>
-
-
-
-      </div>
-   
-     
-          <script>
-            
-           let itemsContainer = document.getElementById("CardItems");
-           function addItem(items) {
-  items.forEach((item) => {
-    itemsContainer.insertAdjacentHTML(
-      "beforeend",
-      `
-    <h5 class="card-title">${item.title}</h5>
-    <div class="card-body">
-        <p class="card-text">${item.resume}</p>
-        <p>Para desktop y dispositivos moviles </p>
-        <div id="oculto" style="display: none;">
-            <p class="card-number">${item.price}$</p>
-        
-        </div>
-        <button class="btn" id="ver-mas">Ver más... </button>
-        <br>
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="${item.images[0].img}" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="${item.images[1].img}" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="${item.images[2].img}" class="d-block w-100" alt="...">
-                </div>
-            </div>
-            <div class="text-center">
-                <a href="https://maodantefotography.up.railway.app/" class="btn btn-dark" id="viaje" target="_blank"><span style="margin-left: 10px;">Iniciar Viaje</span></a>
-            </div>
-            <a class="carousel-control-prev" id="atras" href="#myCarousel" data-bs-target="#carouselExample_${item.id}" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" id="adelante" href="#myCarousel" data-bs-target="#carouselExample_${item.id}" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-                   
-        
-        <!-- Modal -->
-<div class="modal fade" id="exampleModal_${item.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-            </a>
-          </div>
-    </div>
-  </div>
-</div>
-        </div>
-    </div>
-</div>` 
-
-    );
+    `);
+  </script>
+    <script>
+      const producto = JSON.parse(localStorage.getItem("producto"));
+      const botonIr = document.querySelector("#ir");
+      botonIr.addEventListener("click", function() {
+        window.open(producto.sitio, "_blank");
   });
-}</script>
-           
-         
-      <script>var myCarousel = document.querySelector('#myCarousel')
-        var carousel = new bootstrap.Carousel(myCarousel, {
-          interval: 5000,
-         
-        })</script>
-       
-          <!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<!-- Popper -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
-
-<!-- Bootstrap -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<!-- Bootstrap JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        </div>
     
+      document.querySelector("#titulo-producto").textContent = producto.nombre;
+      document.querySelector("#resumen-producto").textContent = producto.resumen;
+      document.querySelector("#precio-producto").textContent = `Precio: ${producto.precio}$`;
+      const carouselImagenes = document.querySelector("#carousel-imagenes .carousel-inner");
+      let primeraImagen = true;
+      for (const imagen of producto.imagenes) {
+        const item = document.createElement("div");
+        item.classList.add("carousel-item");
+        if (primeraImagen) {
+          item.classList.add("active");
+          primeraImagen = false;
+        }
+        const img = document.createElement("img");
+        img.src = imagen;
+        img.style.width = "250px";
+        img.style.height = "150px";
+        img.style.marginLeft = "15px";
+        item.appendChild(img);
+        carouselImagenes.appendChild(item);
+      }
+    </script>
+  <script>
+    let items = [{
+      id: 1,
+      nombre: "Pagina profesional",
+      resumen: "Pagina web. para desktop y dispositivos moviles",
+      images: [
+        { img: "/img/proyectos/m.png" },
+        { img: "/img/proyectos/m3.png" },
+        { img: "/img/proyectos/ma.png" },
+      ],
+      precio:"Precio: " + 4700,
+      url:"http//maodantefotography.up.railway.app",
+    },
+    {
+    id: 2,
+    title: "M",
+    
+    resume:
+      "Las extensas y hermosas playas de Mazatlán, ubicado en el estado de Sinaloa, lo convierten en el destino playero más famoso del noroeste de México.",
+    images: [
+      { img: "/img/proyectos/m.png" },
+      { img: "/img/proyectos/m.png" },
+      { img: "/img/proyectos/m.png" },
+    ],
+    price:  3479,
+    text: "Olvídate del recorrido a pie: deslízate sin esfuerzo por Mazatlán y recorre dos siglos de su historia a bordo de un Segway. Durante esta visita guiada por el casco antiguo y el paseo marítimo, recorra lugares emblemáticos como la Plazuela Machado, la hermosa Catedral, Olas Altas y el Clavadista. Descubrirá más con menos esfuerzo y tiempo con un Segway. Este tour para grupos pequeños está limitado a seis personas, lo que garantiza una atención personalizada. Tour guiado en Segway por Mazatlán Navega por el casco antiguo y el paseo marítimo Admira la arquitectura de la ciudad y observa a los temerarios buceadores saltar desde un acantilado Aprende sobre los orígenes y la evolución de la ciudad. Elige entre varios horarios de salida El tour en grupos pequeños está limitado a seis personas.",
+  },
+  {
+    id: 3,
+    title: "Mazatlán",
+    resume:
+      "Las extensas y hermosas playas de Mazatlán, ubicado en el estado de Sinaloa, lo convierten en el destino playero más famoso del noroeste de México.",
+    images: [
+      { img: "/img/proyectos/m.png" },
+      { img: "/img/proyectos/m.png" },
+      { img: "/img/proyectos/m.png" },
+    ],
+    price:  3479,
+    text: "Olvídate del recorrido a pie: deslízate sin esfuerzo por Mazatlán y recorre dos siglos de su historia a bordo de un Segway. Durante esta visita guiada por el casco antiguo y el paseo marítimo, recorra lugares emblemáticos como la Plazuela Machado, la hermosa Catedral, Olas Altas y el Clavadista. Descubrirá más con menos esfuerzo y tiempo con un Segway. Este tour para grupos pequeños está limitado a seis personas, lo que garantiza una atención personalizada. Tour guiado en Segway por Mazatlán Navega por el casco antiguo y el paseo marítimo Admira la arquitectura de la ciudad y observa a los temerarios buceadores saltar desde un acantilado Aprende sobre los orígenes y la evolución de la ciudad. Elige entre varios horarios de salida El tour en grupos pequeños está limitado a seis personas.",
+  }
+  ];
+  
+    
+  
+    
+  </script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     </section>
     
     <!--<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-rocket-takeoff" viewBox="0 0 16 16">
